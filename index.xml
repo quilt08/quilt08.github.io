@@ -2,10 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>quilt</title>
-        <link>https://quilt08.github.io/</link>
+        <link>https://example.com/</link>
         <description>Recent content on quilt</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://quilt08.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Mon, 29 Nov 2021 19:52:38 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>第一篇博客</title>
+        <link>https://example.com/posts/first-post/</link>
+        <pubDate>Mon, 29 Nov 2021 19:52:38 +0800</pubDate>
+        
+        <guid>https://example.com/posts/first-post/</guid>
+        <description>&lt;p&gt;昨天大概从下午3点开始就一直在折腾，从注册github账号开始&lt;br&gt;
+终于有一点点形状啦&lt;br&gt;
+原本以为昨晚就可以搞定，结果因为git没有办法push到github上，查了好久都不行&lt;br&gt;
+结果今天发现是个好乌龙的问题&lt;br&gt;
+原来是github生成token的时候，下面的范围一个都没有选，然后我就拿着那个token去登陆，还在想为什么没有权限&lt;/p&gt;
+&lt;p&gt;我真的太小白了🤦‍♀️&lt;/p&gt;
+&lt;p&gt;剩下的装修和研究就留给明天下班之后的时间啦（比如现在的这个博客的时间就是错的，但是我还不会改&amp;hellip;）&lt;br&gt;
+也要留点时间给cs61a就是了&lt;/p&gt;
+</description>
+        </item>
+        
     </channel>
 </rss>

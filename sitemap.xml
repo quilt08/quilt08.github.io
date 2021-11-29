@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://quilt08.github.io/archives/</loc>
+    <loc>https://example.com/posts/</loc>
+    <lastmod>2021-11-29T19:52:38+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/</loc>
+    <lastmod>2021-11-29T19:52:38+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/posts/first-post/</loc>
+    <lastmod>2021-11-29T19:52:38+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://quilt08.github.io/page/</loc>
+    <loc>https://example.com/page/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://quilt08.github.io/</loc>
+    <loc>https://example.com/about/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://quilt08.github.io/about/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+    <loc>https://example.com/categories/</loc>
   </url><url>
-    <loc>https://quilt08.github.io/categories/</loc>
+    <loc>https://example.com/search/</loc>
   </url><url>
-    <loc>https://quilt08.github.io/search/</loc>
-  </url><url>
-    <loc>https://quilt08.github.io/tags/</loc>
+    <loc>https://example.com/tags/</loc>
   </url>
 </urlset>
