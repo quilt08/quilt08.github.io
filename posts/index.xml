@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on quilt</title>
+    <title>Posts on Quilt008</title>
     <link>https://example.com/posts/</link>
-    <description>Recent content in Posts on quilt</description>
+    <description>Recent content in Posts on Quilt008</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Nov 2021 19:52:38 +0800</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Nov 2021 23:52:38 +0800</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇博客</title>
       <link>https://example.com/posts/first-post/</link>
-      <pubDate>Mon, 29 Nov 2021 19:52:38 +0800</pubDate>
+      <pubDate>Mon, 29 Nov 2021 23:52:38 +0800</pubDate>
       
       <guid>https://example.com/posts/first-post/</guid>
       <description>昨天大概从下午3点开始就一直在折腾，从注册github账号开始
@@ -20,7 +20,9 @@
 原来是github生成token的时候，下面的范围一个都没有选，然后我就拿着那个token去登陆，还在想为什么没有权限
 我真的太小白了🤦‍♀️
 剩下的装修和研究就留给明天下班之后的时间啦（比如现在的这个博客的时间就是错的，但是我还不会改&amp;hellip;）
-也要留点时间给cs61a就是了</description>
+也要留点时间给cs61a就是了
+UPDATE
+11/30 首页加上了长毛象的链接,修改了about的链接</description>
     </item>
     
     <item>

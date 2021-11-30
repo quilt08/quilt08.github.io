@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on quilt</title>
+    <title>Pages on Quilt008</title>
     <link>https://example.com/page/</link>
-    <description>Recent content in Pages on quilt</description>
+    <description>Recent content in Pages on Quilt008</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Nov 2021 23:58:54 +0800</lastBuildDate><atom:link href="https://example.com/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于我</title>
+      <link>https://example.com/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+      <pubDate>Tue, 30 Nov 2021 23:58:54 +0800</pubDate>
+      
+      <guid>https://example.com/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+      <description>先占个位</description>
+    </item>
+    
     <item>
       <title>Archives</title>
       <link>https://example.com/archives/</link>
@@ -14,17 +23,6 @@
       
       <guid>https://example.com/archives/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://example.com/about/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/about/</guid>
-      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
-Hugo makes use of a variety of open source projects including:
- https://github.</description>
     </item>
     
     <item>
