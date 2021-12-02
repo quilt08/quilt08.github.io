@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on quilt008</title>
-    <link>https://example.com/posts/</link>
-    <description>Recent content in Posts on quilt008</description>
+    <title>年月周记 on quilt008</title>
+    <link>https://example.com/tags/%E5%B9%B4%E6%9C%88%E5%91%A8%E8%AE%B0/</link>
+    <description>Recent content in 年月周记 on quilt008</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Dec 2021 23:08:16 +0800</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Dec 2021 23:08:16 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%B9%B4%E6%9C%88%E5%91%A8%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>&lt;月度小结&gt;11月：失业、入职与录取</title>
       <link>https://example.com/posts/11%E6%9C%88/</link>
@@ -37,41 +37,6 @@
 运动&amp;amp;睡眠 运动0次，膝盖莫名其妙痛了一个月，去医院拍了片子也没看出来什么问题
 作息还是晚睡晚起，什么时候才可以调整到12点前睡着😭
 这么一总结，有种一个月好像过得挺充实的错觉</description>
-    </item>
-    
-    <item>
-      <title>&lt;博客&gt;装修流水账</title>
-      <link>https://example.com/posts/first-post/</link>
-      <pubDate>Mon, 29 Nov 2021 23:52:38 +0800</pubDate>
-      
-      <guid>https://example.com/posts/first-post/</guid>
-      <description>昨天大概从下午3点开始就一直在折腾，从注册github账号开始
-终于有一点点形状啦
-原本以为昨晚就可以搞定，结果因为git没有办法push到github上，查了好久都不行
-结果今天发现是个好乌龙的问题
-原来是github生成token的时候，下面的范围一个都没有选，然后我就拿着那个token去登陆，还在想为什么没有权限
-我真的太小白了🤦‍♀️
-剩下的装修和研究就留给明天下班之后的时间啦（比如现在的这个博客的时间就是错的，但是我还不会改&amp;hellip;）
-也要留点时间给cs61a就是了
-UPDATE
-11/30 首页加上了长毛象的链接,修改了about的链接 12/1 增加了分类和tag，给分类取名字想了好久hhh</description>
-    </item>
-    
-    <item>
-      <title>夏日限定</title>
-      <link>https://example.com/posts/%E5%A4%8F%E6%97%A5%E9%99%90%E5%AE%9A/</link>
-      <pubDate>Mon, 12 Jul 2021 00:01:05 +0800</pubDate>
-      
-      <guid>https://example.com/posts/%E5%A4%8F%E6%97%A5%E9%99%90%E5%AE%9A/</guid>
-      <description>本来只想写个广播，写着写着发现字数超了（可能大概或许哪一天又会锁成自己可见）
-看到黑寡妇字幕校对的那个帖子，突然想起来n年前的夏天和同担一起做字幕的故事。
-一开始是完全不认识的人，她想找人一起校译我担2000年出头的舞台剧。那部剧没有官方DVD，只有粉丝手里晃来晃去的偷拍视频，音质画质都很渣，所以一直都没有字幕组做。当时的我真的很闲，总之一拍即合就一起开始校译，因为音质真的很渣（我的日语也很渣）加上不熟悉的日本历史题材，基本一小段我们要听好久还一起讨论。
-无字的原视频好像是传在土豆网上，加了密码，只有我们两个人能看到。其实也没有约定要怎么进行每天什么时候开始，慢慢变成每天晚上差不多吃完晚饭歇一会，就会坐到电脑面前一边听一边写，听了就把结果发给对方，看看对不对。有的时候她比我早，有的时候她做实验晚了我就一个人先听，等她来了再一起讨论。
-用了很多天，我们校对完，她打轴压制，两个个体户一起做了一个完整舞台剧的字幕。当时我们讨论说希望有人看了以后给我们纠正字幕错误，可以出2.0版，可惜没有人找我们。当时还计划要做同系列的其他舞台的字幕，后来也没有这样的时机，一点点遗憾
-不过现在回忆起来，这整件事情里面最让我觉得不可思议且迷惑的是，我们当时没有任何其他联系方式，所有的讨论都靠微博私信……
- 最最最开始的时候 
- 一个logo 
- 爱过</description>
     </item>
     
   </channel>
