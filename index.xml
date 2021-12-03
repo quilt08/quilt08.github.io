@@ -8,10 +8,10 @@
         <language>en-us</language>
         <lastBuildDate>Thu, 02 Dec 2021 23:08:16 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>&lt;月度小结&gt;11月：失业、入职与录取</title>
-        <link>https://example.com/posts/11%E6%9C%88/</link>
+        <link>https://example.com/posts/nov/</link>
         <pubDate>Thu, 02 Dec 2021 23:08:16 +0800</pubDate>
         
-        <guid>https://example.com/posts/11%E6%9C%88/</guid>
+        <guid>https://example.com/posts/nov/</guid>
         <description>&lt;h2 id=&#34;七七八八&#34;&gt;七七八八&lt;/h2&gt;
 &lt;p&gt;上个月意外被裁员后，其实比较害怕出去面试，就一直拖着没有怎么写简历。但是我有一个非常鸡我的同事，比我大一些也比较有社会经验，催我写简历，还喊我去她家玩，顺便帮我模拟面试了一下（特别感谢她）。新工作倒是迅速地决定了，实在害怕面试一共就面了3家，最后投奔了另一个前同事，当他的下属去了。&lt;/p&gt;
 &lt;p&gt;新工作敲定完，10月底到11月初，就回了趟家，在家里待了一周左右。妈妈的上班时间总是饭点，所以没有和她一起吃过饭。月中回上海入职。三年前第一份正式工作开始，是他带着我去座位领电脑介绍人，然后去会议室在白板上写写画画介绍工作内容。三年后我的第二份工作开始，也是他带我去座位领电脑，然后去会议室白板上谢谢画画介绍工作内容，有点时空穿梭的错觉。我已经成长了很多，早就达到了他很早对我可以独当一面的期望，他也晋升当了中层领导，从之前只带我一个人，到现在带了一个小团队。恭喜我们俩&lt;/p&gt;
@@ -74,16 +74,18 @@
 &lt;p&gt;剩下的装修和研究就留给明天下班之后的时间啦（比如现在的这个博客的时间就是错的，但是我还不会改&amp;hellip;）&lt;br&gt;
 也要留点时间给cs61a就是了&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;&lt;br&gt;
-11/30 首页加上了长毛象的链接,修改了about的链接
-12/1 增加了分类和tag，给分类取名字想了好久hhh&lt;/p&gt;
+2021/11/30 首页加上了长毛象的链接,修改了about的链接&lt;br&gt;
+2021/12/1 增加了分类和tag，给分类取名字想了好久hhh&lt;br&gt;
+2021/12/3 增加了字数统计（虽然好像和实际字数有一点点偏差），顺便发现原来日志的阅读时间都是1分钟的原因是没有识别汉字，现在正常啦&lt;br&gt;
+因为想用统计浏览次数的功能，把评论改成valine了，但是还没研究出来怎么把浏览次数展示出来&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>夏日限定</title>
-        <link>https://example.com/posts/%E5%A4%8F%E6%97%A5%E9%99%90%E5%AE%9A/</link>
+        <link>https://example.com/posts/summer-time/</link>
         <pubDate>Mon, 12 Jul 2021 00:01:05 +0800</pubDate>
         
-        <guid>https://example.com/posts/%E5%A4%8F%E6%97%A5%E9%99%90%E5%AE%9A/</guid>
+        <guid>https://example.com/posts/summer-time/</guid>
         <description>&lt;p&gt;本来只想写个广播，写着写着发现字数超了（可能大概或许哪一天又会锁成自己可见）&lt;/p&gt;
 &lt;p&gt;看到黑寡妇字幕校对的那个帖子，突然想起来n年前的夏天和同担一起做字幕的故事。&lt;/p&gt;
 &lt;p&gt;一开始是完全不认识的人，她想找人一起校译我担2000年出头的舞台剧。那部剧没有官方DVD，只有粉丝手里晃来晃去的偷拍视频，音质画质都很渣，所以一直都没有字幕组做。当时的我真的很闲，总之一拍即合就一起开始校译，因为音质真的很渣（我的日语也很渣）加上不熟悉的日本历史题材，基本一小段我们要听好久还一起讨论。&lt;/p&gt;
