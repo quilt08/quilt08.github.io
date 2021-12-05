@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on quilt008</title>
+    <title>Posts on Quilt008</title>
     <link>https://example.com/posts/</link>
-    <description>Recent content in Posts on quilt008</description>
+    <description>Recent content in Posts on Quilt008</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Dec 2021 23:08:16 +0800</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 17:51:37 +0800</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图书馆打杂日记</title>
+      <link>https://example.com/posts/librarian/</link>
+      <pubDate>Sun, 05 Dec 2021 17:51:37 +0800</pubDate>
+      
+      <guid>https://example.com/posts/librarian/</guid>
+      <description>上个月回家从老电脑里搜刮出来的文档，因为是专业实习算学分，要求我们交实习日记，所以不情不愿写了一堆有的没的的流水账。马掉了一些个人信息，写得</description>
+    </item>
+    
     <item>
       <title>&lt;月度小结&gt;11月：失业、入职与录取</title>
       <link>https://example.com/posts/nov/</link>

@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>心情杂记 on quilt008</title>
+    <title>心情杂记 on Quilt008</title>
     <link>https://example.com/tags/%E5%BF%83%E6%83%85%E6%9D%82%E8%AE%B0/</link>
-    <description>Recent content in 心情杂记 on quilt008</description>
+    <description>Recent content in 心情杂记 on Quilt008</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Jul 2021 00:01:05 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%BF%83%E6%83%85%E6%9D%82%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 17:51:37 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%BF%83%E6%83%85%E6%9D%82%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图书馆打杂日记</title>
+      <link>https://example.com/posts/librarian/</link>
+      <pubDate>Sun, 05 Dec 2021 17:51:37 +0800</pubDate>
+      
+      <guid>https://example.com/posts/librarian/</guid>
+      <description>上个月回家从老电脑里搜刮出来的文档，因为是专业实习算学分，要求我们交实习日记，所以不情不愿写了一堆有的没的的流水账。马掉了一些个人信息，写得</description>
+    </item>
+    
     <item>
       <title>夏日限定</title>
       <link>https://example.com/posts/summer-time/</link>
