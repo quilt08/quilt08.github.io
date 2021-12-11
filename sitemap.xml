@@ -2,56 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/categories/</loc>
+    <loc>bibli.info/categories/</loc>
     <lastmod>2021-12-05T17:51:37+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/</loc>
+    <loc>bibli.info/posts/</loc>
     <lastmod>2021-12-05T17:51:37+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/</loc>
+    <loc>bibli.info/</loc>
     <lastmod>2021-12-05T17:51:37+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/</loc>
+    <loc>bibli.info/tags/</loc>
     <lastmod>2021-12-05T17:51:37+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/librarian/</loc>
+    <loc>bibli.info/posts/librarian/</loc>
     <lastmod>2021-12-05T17:51:37+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/%E5%A4%A9%E9%BB%91%E5%89%8D%E7%9A%84%E5%A4%8F%E5%A4%A9/</loc>
+    <loc>bibli.info/categories/%E5%A4%A9%E9%BB%91%E5%89%8D%E7%9A%84%E5%A4%8F%E5%A4%A9/</loc>
     <lastmod>2021-12-05T17:51:37+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/%E5%BF%83%E6%83%85%E6%9D%82%E8%AE%B0/</loc>
+    <loc>bibli.info/tags/%E5%BF%83%E6%83%85%E6%9D%82%E8%AE%B0/</loc>
     <lastmod>2021-12-05T17:51:37+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/nov/</loc>
+    <loc>bibli.info/posts/nov/</loc>
     <lastmod>2021-12-02T23:08:16+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/%E5%B9%B4%E6%9C%88%E5%91%A8%E8%AE%B0/</loc>
+    <loc>bibli.info/tags/%E5%B9%B4%E6%9C%88%E5%91%A8%E8%AE%B0/</loc>
     <lastmod>2021-12-02T23:08:16+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/page/</loc>
+    <loc>bibli.info/page/</loc>
     <lastmod>2021-11-30T23:58:54+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/%E5%85%B3%E4%BA%8E%E6%88%91/</loc>
+    <loc>bibli.info/%E5%85%B3%E4%BA%8E%E6%88%91/</loc>
     <lastmod>2021-11-30T23:58:54+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/first-post/</loc>
+    <loc>bibli.info/posts/first-post/</loc>
     <lastmod>2021-11-29T23:52:38+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/hugo/</loc>
+    <loc>bibli.info/tags/hugo/</loc>
     <lastmod>2021-11-29T23:52:38+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/%E9%BB%91%E9%AD%94%E6%B3%95%E9%98%B2%E5%BE%A1%E6%9C%AF/</loc>
+    <loc>bibli.info/categories/%E9%BB%91%E9%AD%94%E6%B3%95%E9%98%B2%E5%BE%A1%E6%9C%AF/</loc>
     <lastmod>2021-11-29T23:52:38+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/summer-time/</loc>
+    <loc>bibli.info/posts/summer-time/</loc>
     <lastmod>2021-07-12T00:01:05+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/archives/</loc>
+    <loc>bibli.info/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/%E4%BA%91%E5%A4%96%E9%95%9C/</loc>
+    <loc>bibli.info/categories/%E4%BA%91%E5%A4%96%E9%95%9C/</loc>
   </url><url>
-    <loc>https://example.com/search/</loc>
+    <loc>bibli.info/search/</loc>
   </url>
 </urlset>
