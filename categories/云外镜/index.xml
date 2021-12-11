@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>云外镜 on Quilt008</title>
-    <link>bibli.info/categories/%E4%BA%91%E5%A4%96%E9%95%9C/</link>
+    <link>/categories/%E4%BA%91%E5%A4%96%E9%95%9C/</link>
     <description>Recent content in 云外镜 on Quilt008</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="bibli.info/categories/%E4%BA%91%E5%A4%96%E9%95%9C/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/categories/%E4%BA%91%E5%A4%96%E9%95%9C/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

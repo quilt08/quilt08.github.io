@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Quilt008</title>
-    <link>bibli.info/page/</link>
+    <link>/page/</link>
     <description>Recent content in Pages on Quilt008</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Nov 2021 23:58:54 +0800</lastBuildDate><atom:link href="bibli.info/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Nov 2021 23:58:54 +0800</lastBuildDate><atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于我</title>
-      <link>bibli.info/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+      <link>/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
       <pubDate>Tue, 30 Nov 2021 23:58:54 +0800</pubDate>
       
-      <guid>bibli.info/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+      <guid>/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
       <description>描述自己好像是我最不擅长的事情 普通咸鱼，想的比做的多，希望能平衡这一点 这个博客大概会堆放自己时不时冒出来的倾诉欲 有趣指数★★☆☆☆ 但是还是希</description>
     </item>
     
     <item>
       <title>存档</title>
-      <link>bibli.info/archives/</link>
+      <link>/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>bibli.info/archives/</guid>
+      <guid>/archives/</guid>
       <description></description>
     </item>
     
     <item>
       <title>查找</title>
-      <link>bibli.info/search/</link>
+      <link>/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>bibli.info/search/</guid>
+      <guid>/search/</guid>
       <description></description>
     </item>
     
