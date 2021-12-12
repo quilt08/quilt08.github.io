@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>书影音游 on Quilt008</title>
+    <link>https://example.com/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3%E6%B8%B8/</link>
+    <description>Recent content in 书影音游 on Quilt008</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Sep 2016 00:00:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3%E6%B8%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>We Have Always Lived in the Castle</title>
+      <link>https://example.com/posts/160925/</link>
+      <pubDate>Sun, 25 Sep 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/160925/</guid>
+      <description>断断续续终于把这本看完了，对我来说不惊悚，没有鬼怪我都只归到悬疑里。 从头到尾都是妹妹的视角，从镇子上的人对她们的恶意满满引出来六年前的命案。</description>
+    </item>
+    
+    <item>
+      <title>What I talk about when I talk about running</title>
+      <link>https://example.com/posts/running/</link>
+      <pubDate>Fri, 21 Feb 2014 19:24:58 +0800</pubDate>
+      
+      <guid>https://example.com/posts/running/</guid>
+      <description>第二本，从头读到尾读完的英文书。 最开始的时候是想读英文书，可是每次有这个念头的时候我一定会去打开家里的HP7，这本书从初中第一次买来到现在读</description>
+    </item>
+    
+  </channel>
+</rss>

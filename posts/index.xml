@@ -2,45 +2,198 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Quilt008</title>
-    <link>/posts/</link>
+    <link>https://example.com/posts/</link>
     <description>Recent content in Posts on Quilt008</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Dec 2021 17:51:37 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 17:51:37 +0800</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图书馆打杂日记</title>
-      <link>/posts/librarian/</link>
+      <link>https://example.com/posts/librarian/</link>
       <pubDate>Sun, 05 Dec 2021 17:51:37 +0800</pubDate>
       
-      <guid>/posts/librarian/</guid>
+      <guid>https://example.com/posts/librarian/</guid>
       <description>上个月回家从老电脑里搜刮出来的文档，因为是专业实习算学分，要求我们交实习日记，所以不情不愿写了一堆有的没的的流水账。马掉了一些个人信息，写得</description>
     </item>
     
     <item>
       <title>&lt;月度小结&gt;11月：失业、入职与录取</title>
-      <link>/posts/nov/</link>
+      <link>https://example.com/posts/nov/</link>
       <pubDate>Thu, 02 Dec 2021 23:08:16 +0800</pubDate>
       
-      <guid>/posts/nov/</guid>
+      <guid>https://example.com/posts/nov/</guid>
       <description>七七八八 上个月意外被裁员后，其实比较害怕出去面试，就一直拖着没有怎么写简历。但是我有一个非常鸡我的同事，比我大一些也比较有社会经验，催我写简</description>
     </item>
     
     <item>
       <title>&lt;博客&gt;装修流水账</title>
-      <link>/posts/first-post/</link>
+      <link>https://example.com/posts/first-post/</link>
       <pubDate>Mon, 29 Nov 2021 23:52:38 +0800</pubDate>
       
-      <guid>/posts/first-post/</guid>
+      <guid>https://example.com/posts/first-post/</guid>
       <description>昨天大概从下午3点开始就一直在折腾，从注册github账号开始 终于有一点点形状啦 原本以为昨晚就可以搞定，结果因为git没有办法push到gi</description>
     </item>
     
     <item>
       <title>夏日限定</title>
-      <link>/posts/summer-time/</link>
+      <link>https://example.com/posts/summer-time/</link>
       <pubDate>Mon, 12 Jul 2021 00:01:05 +0800</pubDate>
       
-      <guid>/posts/summer-time/</guid>
+      <guid>https://example.com/posts/summer-time/</guid>
       <description>本来只想写个广播，写着写着发现字数超了（可能大概或许哪一天又会锁成自己可见） 看到黑寡妇字幕校对的那个帖子，突然想起来n年前的夏天和同担一起做</description>
+    </item>
+    
+    <item>
+      <title>无题</title>
+      <link>https://example.com/posts/170329/</link>
+      <pubDate>Wed, 29 Mar 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/170329/</guid>
+      <description>最近在写莎士比亚有关的论文 文学素养几乎没有，也不是文学专业，文学理论更是一窍不通，总之是硬啃书。 研究莎士比亚就逃不了格林布拉特，看了一点有关</description>
+    </item>
+    
+    <item>
+      <title>无题</title>
+      <link>https://example.com/posts/161113/</link>
+      <pubDate>Sun, 13 Nov 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/161113/</guid>
+      <description>漫威换了新片头，感觉很不开心。之前在电影院就瞪大了眼睛找冬哥，感觉有个一晃而过的手臂镜头，也不太能确定，今天在微博上又看到了，还是不太确定到</description>
+    </item>
+    
+    <item>
+      <title>We Have Always Lived in the Castle</title>
+      <link>https://example.com/posts/160925/</link>
+      <pubDate>Sun, 25 Sep 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/160925/</guid>
+      <description>断断续续终于把这本看完了，对我来说不惊悚，没有鬼怪我都只归到悬疑里。 从头到尾都是妹妹的视角，从镇子上的人对她们的恶意满满引出来六年前的命案。</description>
+    </item>
+    
+    <item>
+      <title>无题</title>
+      <link>https://example.com/posts/150206/</link>
+      <pubDate>Fri, 06 Feb 2015 18:49:22 +0800</pubDate>
+      
+      <guid>https://example.com/posts/150206/</guid>
+      <description>心是孤独的猎手这本书断断续续从去年看到今年，打开又关上，直到今天才读完。 想不出有什么话要说，太压抑，有点窒息的感觉。 拼了命地想要说出自己的话</description>
+    </item>
+    
+    <item>
+      <title>无题</title>
+      <link>https://example.com/posts/150530/</link>
+      <pubDate>Fri, 30 Jan 2015 21:13:48 +0800</pubDate>
+      
+      <guid>https://example.com/posts/150530/</guid>
+      <description>又去翻了翻以前在豆瓣上的打卡贴，写了有一年多好像。 开帖子的时候也是大概算是一个人生转折点（？）的时期，我自己是这么认为的啦，但是实际上并没有</description>
+    </item>
+    
+    <item>
+      <title>你是到底想要怎样</title>
+      <link>https://example.com/posts/140912/</link>
+      <pubDate>Fri, 12 Sep 2014 15:00:47 +0800</pubDate>
+      
+      <guid>https://example.com/posts/140912/</guid>
+      <description>从前天保研的会开了之后我就平静不下来了。会是班长支书们去开的，比较熟的几个人回来都在不同的时间找过我跟我说希望很大，而且今年政策很好可以试一</description>
+    </item>
+    
+    <item>
+      <title>苦亚希</title>
+      <link>https://example.com/posts/140812/</link>
+      <pubDate>Tue, 12 Aug 2014 19:43:08 +0800</pubDate>
+      
+      <guid>https://example.com/posts/140812/</guid>
+      <description>坐在图书馆看不下去书，前前后后的人都在埋头认真地准备，最后还是冒着大雨逃回宿舍。 复习的书是大一第一学期上的专业课，看到书上的笔记好像连当时的</description>
+    </item>
+    
+    <item>
+      <title>实习倒计时</title>
+      <link>https://example.com/posts/140725/</link>
+      <pubDate>Fri, 25 Jul 2014 22:46:57 +0800</pubDate>
+      
+      <guid>https://example.com/posts/140725/</guid>
+      <description>这个子博就拿来写日常了，虽然原本是准备拿主博来写的，但是现在关注主博的大概都不是因为这些东西才来的，所以以后都在这里写啦。 现在就来实习倒计时</description>
+    </item>
+    
+    <item>
+      <title>无题</title>
+      <link>https://example.com/posts/140511/</link>
+      <pubDate>Sun, 11 May 2014 16:15:27 +0800</pubDate>
+      
+      <guid>https://example.com/posts/140511/</guid>
+      <description>今早把写在活页上的笔记放到本子里的时候看到之前摘抄下来的片段。 等你长大了，她就放你到你想要去的地方。她深信你会爱这个世界，至于其他她不管，至</description>
+    </item>
+    
+    <item>
+      <title>What I talk about when I talk about running</title>
+      <link>https://example.com/posts/running/</link>
+      <pubDate>Fri, 21 Feb 2014 19:24:58 +0800</pubDate>
+      
+      <guid>https://example.com/posts/running/</guid>
+      <description>第二本，从头读到尾读完的英文书。 最开始的时候是想读英文书，可是每次有这个念头的时候我一定会去打开家里的HP7，这本书从初中第一次买来到现在读</description>
+    </item>
+    
+    <item>
+      <title>我不想我的大三下只剩下迷茫两个字</title>
+      <link>https://example.com/posts/140218/</link>
+      <pubDate>Tue, 18 Feb 2014 22:58:27 +0800</pubDate>
+      
+      <guid>https://example.com/posts/140218/</guid>
+      <description>迷茫，其实一直是迷茫的吧。 昨晚在水房里洗漱的时候听到同学的对话，大概是G友一起备战当中。听到她们的对话突然有些不知所措，GRE是自己放弃的到</description>
+    </item>
+    
+    <item>
+      <title>年终总结？</title>
+      <link>https://example.com/posts/131230/</link>
+      <pubDate>Mon, 30 Dec 2013 21:26:52 +0800</pubDate>
+      
+      <guid>https://example.com/posts/131230/</guid>
+      <description>今天下午准备开始写年终总结，突然发现今年什么事情都不记得了所以翻了离自己最近的日记本，这才猛然发现原来从今年年初到年末的日记本里都是相似的内</description>
+    </item>
+    
+    <item>
+      <title>一定要打败CSS和HTML</title>
+      <link>https://example.com/posts/131213/</link>
+      <pubDate>Fri, 13 Dec 2013 16:22:46 +0800</pubDate>
+      
+      <guid>https://example.com/posts/131213/</guid>
+      <description>昨天对着网上的教程把HTML过了一遍，但是还是不太会借鉴别人的网页，看了源代码也只能是看看而已。排版依旧是大问题&amp;hellip;百度了都是说</description>
+    </item>
+    
+    <item>
+      <title>131207</title>
+      <link>https://example.com/posts/131207/</link>
+      <pubDate>Sat, 07 Dec 2013 23:06:12 +0800</pubDate>
+      
+      <guid>https://example.com/posts/131207/</guid>
+      <description>考完试一下子觉得又没有方向了。 报名的时候是8月7日，19岁的最后一天。 暑假只是断断续续地背完了一本单词书却再也没有复习一遍仍旧不记得。 之后的</description>
+    </item>
+    
+    <item>
+      <title>无题</title>
+      <link>https://example.com/posts/131127/</link>
+      <pubDate>Wed, 27 Nov 2013 00:00:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/131127/</guid>
+      <description>昨天阿智生日。机油穿着阿径的衣服来见我，聊天聊得超开心ww 今天是A君生日，把这几年都没有机会跟他说的那句“我们生肖一样诶好巧”和一些其他的心</description>
+    </item>
+    
+    <item>
+      <title>无处不在</title>
+      <link>https://example.com/posts/131024/</link>
+      <pubDate>Thu, 24 Oct 2013 00:00:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/131024/</guid>
+      <description>上学期实验课的时候随手翻到的一页&amp;gt;&amp;lt;几乎是一眼就被中间的两个字给吸引到了。 img-ZSt-GWEwr-L0t-GSHArb0-R2ald2-Q2p-SRHp-OZTh-VSWVCek-Rt-VDVk-Sm12-L3-Jo-WFE1-ZXhh-Yn-VLd-HJRPT0.jpg</description>
+    </item>
+    
+    <item>
+      <title>不可见的中秋</title>
+      <link>https://example.com/posts/130909/</link>
+      <pubDate>Mon, 09 Sep 2013 00:00:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/130909/</guid>
+      <description>有的时候觉得生活就这样子多好。 在隔壁宿舍蹭吃蹭喝抢着别人碗里的五花肉临走时候还被喂一口火腿肠。 和认识了不知道有多久从初中高中就在一起的朋友去</description>
     </item>
     
   </channel>
