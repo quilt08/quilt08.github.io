@@ -26,6 +26,9 @@
     <loc>https://example.com/posts/nov/</loc>
     <lastmod>2021-12-02T23:08:16+08:00</lastmod>
   </url><url>
+    <loc>https://example.com/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3%E6%B8%B8/</loc>
+    <lastmod>2021-12-02T23:08:16+08:00</lastmod>
+  </url><url>
     <loc>https://example.com/tags/%E5%B9%B4%E6%9C%88%E5%91%A8%E8%AE%B0/</loc>
     <lastmod>2021-12-02T23:08:16+08:00</lastmod>
   </url><url>
@@ -50,6 +53,9 @@
     <loc>https://example.com/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://example.com/posts/170723/</loc>
+    <lastmod>2017-07-23T00:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://example.com/posts/170329/</loc>
     <lastmod>2017-03-29T00:00:00+08:00</lastmod>
   </url><url>
@@ -57,9 +63,6 @@
     <lastmod>2016-11-13T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://example.com/posts/160925/</loc>
-    <lastmod>2016-09-25T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://example.com/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3%E6%B8%B8/</loc>
     <lastmod>2016-09-25T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://example.com/posts/150206/</loc>
@@ -91,6 +94,9 @@
   </url><url>
     <loc>https://example.com/posts/130909/</loc>
     <lastmod>2013-09-09T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/posts/100101/</loc>
+    <lastmod>2010-01-01T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://example.com/categories/%E4%BA%91%E5%A4%96%E9%95%9C/</loc>
   </url><url>
