@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="年" />
+	
+	
+	
+	<title>The Game of Hog ｜ Nian.</title>
+	
+    
+    
+    <meta name="description" content="每天下班抠一点时间出来写，听课的时候higher-order functions没怎么看明白，感觉像懂了，写到phase 2的几问才发现根本没懂再回去补课。整体写起来很有意思，目前的胜率是0.549638" />
+    
+
+    
+    
+    <meta name="keywords" content="Hugo, theme" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://quilt08.github.io/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://quilt08.github.iocss/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://quilt08.github.io/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://quilt08.github.io/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://quilt08.github.io">
+                    <span>Nian.</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">想不明白</p>
+            <div class="my_socials">
+                
+                <a href="https://quilt08.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/the-game-of-hog/'>The Game of Hog</a></h2>
+                        <span class="date">2022.01.15</span>
+                    </div>
+                    <div class="post_content markdown"><p>每天下班抠一点时间出来写，听课的时候higher-order functions没怎么看明白，感觉像懂了，写到phase 2的几问才发现根本没懂再回去补课。整体写起来很有意思，目前的胜率是0.5496381517033135，题目里给的hint只用了一个，如果之后有兴趣再研究看看怎么提高胜率</p>
+<p><a href="https://inst.eecs.berkeley.edu/~cs61a/fa19/proj/hog/#problem-10-1-pt">题目链接</a>（2019 fall）</p>
+<p>粗糙的代码也存个档</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">
+<span class="s2">&#34;&#34;&#34;CS 61A Presents The Game of Hog.&#34;&#34;&#34;</span>
+ 
+<span class="kn">from</span> <span class="nn">dice</span> <span class="kn">import</span> <span class="n">six_sided</span><span class="p">,</span> <span class="n">four_sided</span><span class="p">,</span> <span class="n">make_test_dice</span>
+<span class="kn">from</span> <span class="nn">ucb</span> <span class="kn">import</span> <span class="n">main</span><span class="p">,</span> <span class="n">trace</span><span class="p">,</span> <span class="n">interact</span>
+ 
+<span class="n">GOAL_SCORE</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># The goal of Hog is to score 100 points.</span>
+ 
+<span class="c1">######################</span>
+<span class="c1"># Phase 1: Simulator #</span>
+<span class="c1">######################</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">roll_dice</span><span class="p">(</span><span class="n">num_rolls</span><span class="p">,</span> <span class="n">dice</span><span class="o">=</span><span class="n">six_sided</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Simulate rolling the DICE exactly NUM_ROLLS &gt; 0 times. Return the sum of
+</span><span class="s2">    the outcomes unless any of the outcomes is 1. In that case, return 1.
+</span><span class="s2"> 
+</span><span class="s2">    num_rolls:  The number of dice rolls that will be made.
+</span><span class="s2">    dice:       A function that simulates a single dice roll outcome.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># These assert statements ensure that num_rolls is a positive integer.</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">num_rolls</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">,</span> <span class="s1">&#39;num_rolls must be an integer.&#39;</span>
+    <span class="k">assert</span> <span class="n">num_rolls</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Must roll at least once.&#39;</span>
+    <span class="c1"># BEGIN PROBLEM 1</span>
+    <span class="n">sum_out</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">pig_flag</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">while</span> <span class="n">terms</span> <span class="o">&lt;</span> <span class="n">num_rolls</span><span class="p">:</span>
+        <span class="n">outcome</span> <span class="o">=</span> <span class="n">dice</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">outcome</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">pig_flag</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sum_out</span> <span class="o">=</span> <span class="n">sum_out</span> <span class="o">+</span> <span class="n">outcome</span>
+        <span class="n">terms</span> <span class="o">=</span> <span class="n">terms</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">pig_flag</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sum_out</span>
+    <span class="c1"># END PROBLEM 1</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">free_bacon</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return the points scored from rolling 0 dice (Free Bacon).
+</span><span class="s2"> 
+</span><span class="s2">    score:  The opponent&#39;s current score.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">assert</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;The game should be over.&#39;</span>
+    <span class="c1"># BEGIN PROBLEM 2</span>
+    <span class="n">f_score</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">tens</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ones</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">f_score</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tens</span> <span class="o">=</span> <span class="n">score</span> <span class="o">//</span> <span class="mi">10</span>
+        <span class="n">ones</span> <span class="o">=</span> <span class="n">score</span> <span class="o">%</span> <span class="mi">10</span>
+        <span class="n">f_score</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">tens</span><span class="p">,</span> <span class="n">ones</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f_score</span>
+    <span class="c1"># END PROBLEM 2</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">take_turn</span><span class="p">(</span><span class="n">num_rolls</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">,</span> <span class="n">dice</span><span class="o">=</span><span class="n">six_sided</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Simulate a turn rolling NUM_ROLLS dice, which may be 0 (Free Bacon).
+</span><span class="s2">    Return the points scored for the turn by the current player.
+</span><span class="s2"> 
+</span><span class="s2">    num_rolls:       The number of dice rolls that will be made.
+</span><span class="s2">    opponent_score:  The total score of the opponent.
+</span><span class="s2">    dice:            A function that simulates a single dice roll outcome.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># Leave these assert statements here; they help check for errors.</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">num_rolls</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">,</span> <span class="s1">&#39;num_rolls must be an integer.&#39;</span>
+    <span class="k">assert</span> <span class="n">num_rolls</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Cannot roll a negative number of dice in take_turn.&#39;</span>
+    <span class="k">assert</span> <span class="n">num_rolls</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Cannot roll more than 10 dice.&#39;</span>
+    <span class="k">assert</span> <span class="n">opponent_score</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;The game should be over.&#39;</span>
+    <span class="c1"># BEGIN PROBLEM 3</span>
+    <span class="k">if</span> <span class="n">num_rolls</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">turn_score</span> <span class="o">=</span> <span class="n">roll_dice</span><span class="p">(</span><span class="n">num_rolls</span><span class="p">,</span> <span class="n">dice</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">turn_score</span> <span class="o">=</span> <span class="n">free_bacon</span><span class="p">(</span><span class="n">opponent_score</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">turn_score</span>
+    <span class="c1"># END PROBLEM 3</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">is_swap</span><span class="p">(</span><span class="n">player_score</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Return whether the two scores should be swapped
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># BEGIN PROBLEM 4</span>
+    <span class="n">last_player</span> <span class="o">=</span> <span class="n">player_score</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="n">last_opp</span> <span class="o">=</span> <span class="n">opponent_score</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="k">while</span> <span class="n">player_score</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">player_score</span> <span class="o">=</span> <span class="n">player_score</span> <span class="o">//</span> <span class="mi">10</span>
+    <span class="n">first_player</span> <span class="o">=</span> <span class="n">player_score</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="k">while</span> <span class="n">opponent_score</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">opponent_score</span> <span class="o">=</span> <span class="n">opponent_score</span> <span class="o">//</span> <span class="mi">10</span>
+    <span class="n">first_opp</span> <span class="o">=</span> <span class="n">opponent_score</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="k">if</span> <span class="n">first_player</span> <span class="o">*</span> <span class="n">last_player</span> <span class="o">==</span> <span class="n">first_opp</span> <span class="o">*</span> <span class="n">last_opp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="c1"># END PROBLEM 4</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">other</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return the other player, for a player PLAYER numbered 0 or 1.
+</span><span class="s2"> 
+</span><span class="s2">    &gt;&gt;&gt; other(0)
+</span><span class="s2">    1
+</span><span class="s2">    &gt;&gt;&gt; other(1)
+</span><span class="s2">    0
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">player</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">silence</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Announce nothing (see Phase 2).&#34;&#34;&#34;</span>
+    <span class="k">return</span> <span class="n">silence</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="n">strategy0</span><span class="p">,</span> <span class="n">strategy1</span><span class="p">,</span> <span class="n">score0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">score1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dice</span><span class="o">=</span><span class="n">six_sided</span><span class="p">,</span>
+         <span class="n">goal</span><span class="o">=</span><span class="n">GOAL_SCORE</span><span class="p">,</span> <span class="n">say</span><span class="o">=</span><span class="n">silence</span><span class="p">,</span> <span class="n">feral_hogs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Simulate a game and return the final scores of both players, with Player
+</span><span class="s2">    0&#39;s score first, and Player 1&#39;s score second.
+</span><span class="s2"> 
+</span><span class="s2">    A strategy is a function that takes two total scores as arguments (the
+</span><span class="s2">    current player&#39;s score, and the opponent&#39;s score), and returns a number of
+</span><span class="s2">    dice that the current player will roll this turn.
+</span><span class="s2"> 
+</span><span class="s2">    strategy0:  The strategy function for Player 0, who plays first.
+</span><span class="s2">    strategy1:  The strategy function for Player 1, who plays second.
+</span><span class="s2">    score0:     Starting score for Player 015
+</span><span class="s2">    score1:     Starting score for Player 1
+</span><span class="s2">    dice:       A function of zero arguments that simulates a dice roll.
+</span><span class="s2">    goal:       The game ends and someone wins when this score is reached.
+</span><span class="s2">    say:        The commentary function to call at the end of the first turn.
+</span><span class="s2">    feral_hogs: A boolean indicating whether the feral hogs rule should be active.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">player</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Which player is about to take a turn, 0 (first) or 1 (second)</span>
+    <span class="c1"># BEGIN PROBLEM 5</span>
+    <span class="n">num_rolls_pre0</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num_rolls_pre1</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">score0</span> <span class="o">&lt;</span> <span class="n">goal</span> <span class="ow">and</span> <span class="n">score1</span> <span class="o">&lt;</span> <span class="n">goal</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">num_rolls</span> <span class="o">=</span> <span class="n">strategy0</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">)</span>
+            <span class="n">score0</span> <span class="o">+=</span> <span class="n">take_turn</span><span class="p">(</span><span class="n">num_rolls</span><span class="p">,</span> <span class="n">score1</span><span class="p">,</span> <span class="n">dice</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">num_rolls</span> <span class="o">-</span> <span class="n">num_rolls_pre0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">score0</span> <span class="o">=</span> <span class="n">score0</span> <span class="o">+</span> <span class="mi">3</span>
+            <span class="n">num_rolls_pre0</span> <span class="o">=</span> <span class="n">num_rolls</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">num_rolls</span> <span class="o">=</span> <span class="n">strategy1</span><span class="p">(</span><span class="n">score1</span><span class="p">,</span> <span class="n">score0</span><span class="p">)</span>
+            <span class="n">score1</span> <span class="o">+=</span> <span class="n">take_turn</span><span class="p">(</span><span class="n">num_rolls</span><span class="p">,</span> <span class="n">score0</span><span class="p">,</span> <span class="n">dice</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">num_rolls</span> <span class="o">-</span> <span class="n">num_rolls_pre1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">score1</span> <span class="o">=</span> <span class="n">score1</span> <span class="o">+</span> <span class="mi">3</span>
+            <span class="n">num_rolls_pre1</span> <span class="o">=</span> <span class="n">num_rolls</span>
+        <span class="k">if</span> <span class="n">is_swap</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">score0</span><span class="p">,</span> <span class="n">score1</span> <span class="o">=</span> <span class="n">score1</span><span class="p">,</span> <span class="n">score0</span>
+        <span class="n">say</span> <span class="o">=</span> <span class="n">say</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">)</span>
+        <span class="n">player</span> <span class="o">=</span> <span class="n">other</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">score0</span><span class="p">,</span> <span class="n">score1</span>
+ 
+ 
+<span class="c1">#######################</span>
+<span class="c1"># Phase 2: Commentary #</span>
+<span class="c1">#######################</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">say_scores</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;A commentary function that announces the score for each player.&#34;&#34;&#34;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Player 0 now has&#34;</span><span class="p">,</span> <span class="n">score0</span><span class="p">,</span> <span class="s2">&#34;and Player 1 now has&#34;</span><span class="p">,</span> <span class="n">score1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">say_scores</span>
+ 
+<span class="k">def</span> <span class="nf">announce_lead_changes</span><span class="p">(</span><span class="n">previous_leader</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return a commentary function that announces lead changes.
+</span><span class="s2"> 
+</span><span class="s2">    &gt;&gt;&gt; f0 = announce_lead_changes()
+</span><span class="s2">    &gt;&gt;&gt; f1 = f0(5, 0)
+</span><span class="s2">    Player 0 takes the lead by 5
+</span><span class="s2">    &gt;&gt;&gt; f2 = f1(5, 12)
+</span><span class="s2">    Player 1 takes the lead by 7
+</span><span class="s2">    &gt;&gt;&gt; f3 = f2(8, 12)
+</span><span class="s2">    &gt;&gt;&gt; f4 = f3(8, 13)
+</span><span class="s2">    &gt;&gt;&gt; f5 = f4(15, 13)
+</span><span class="s2">    Player 0 takes the lead by 2
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">score0</span> <span class="o">&gt;</span> <span class="n">score1</span><span class="p">:</span>
+            <span class="n">leader</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">score1</span> <span class="o">&gt;</span> <span class="n">score0</span><span class="p">:</span>
+            <span class="n">leader</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">leader</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">leader</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">leader</span> <span class="o">!=</span> <span class="n">previous_leader</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Player&#39;</span><span class="p">,</span> <span class="n">leader</span><span class="p">,</span> <span class="s1">&#39;takes the lead by&#39;</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">score0</span> <span class="o">-</span> <span class="n">score1</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">announce_lead_changes</span><span class="p">(</span><span class="n">leader</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">say</span>
+ 
+<span class="k">def</span> <span class="nf">both</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return a commentary function that says what f says, then what g says.
+</span><span class="s2"> 
+</span><span class="s2">    NOTE: the following game is not possible under the rules, it&#39;s just
+</span><span class="s2">    an example for the sake of the doctest
+</span><span class="s2"> 
+</span><span class="s2">    &gt;&gt;&gt; h0 = both(say_scores, announce_lead_changes())
+</span><span class="s2">    &gt;&gt;&gt; h1 = h0(10, 0)
+</span><span class="s2">    Player 0 now has 10 and Player 1 now has 0
+</span><span class="s2">    Player 0 takes the lead by 10
+</span><span class="s2">    &gt;&gt;&gt; h2 = h1(10, 6)
+</span><span class="s2">    Player 0 now has 10 and Player 1 now has 6
+</span><span class="s2">    &gt;&gt;&gt; h3 = h2(6, 17)
+</span><span class="s2">    Player 0 now has 6 and Player 1 now has 17
+</span><span class="s2">    Player 1 takes the lead by 11
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">both</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">say</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">announce_highest</span><span class="p">(</span><span class="n">who</span><span class="p">,</span> <span class="n">previous_high</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">previous_score</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return a commentary function that announces when WHO&#39;s score
+</span><span class="s2">    increases by more than ever before in the game.
+</span><span class="s2"> 
+</span><span class="s2">    NOTE: the following game is not possible under the rules, it&#39;s just
+</span><span class="s2">    an example for the sake of the doctest
+</span><span class="s2"> 
+</span><span class="s2">    &gt;&gt;&gt; f0 = announce_highest(1) # Only announce Player 1 score gains
+</span><span class="s2">    &gt;&gt;&gt; f1 = f0(12, 0)
+</span><span class="s2">    &gt;&gt;&gt; f2 = f1(12, 11)
+</span><span class="s2">    11 point(s)! That&#39;s the biggest gain yet for Player 1
+</span><span class="s2">    &gt;&gt;&gt; f3 = f2(20, 11)
+</span><span class="s2">    &gt;&gt;&gt; f4 = f3(13, 20)
+</span><span class="s2">    &gt;&gt;&gt; f5 = f4(20, 35)
+</span><span class="s2">    15 point(s)! That&#39;s the biggest gain yet for Player 1
+</span><span class="s2">    &gt;&gt;&gt; f6 = f5(20, 47) # Player 1 gets 12 points; not enough for a new high
+</span><span class="s2">    &gt;&gt;&gt; f7 = f6(21, 47)
+</span><span class="s2">    &gt;&gt;&gt; f8 = f7(21, 77)
+</span><span class="s2">    30 point(s)! That&#39;s the biggest gain yet for Player 1
+</span><span class="s2">    &gt;&gt;&gt; f9 = f8(77, 22) # Swap!
+</span><span class="s2">    &gt;&gt;&gt; f10 = f9(33, 77) # Swap!
+</span><span class="s2">    55 point(s)! That&#39;s the biggest gain yet for Player 1
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">assert</span> <span class="n">who</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">who</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;The who argument should indicate a player.&#39;</span>
+    <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">score0</span><span class="p">,</span> <span class="n">score1</span><span class="p">,</span> <span class="n">previous_score</span><span class="o">=</span><span class="n">previous_score</span><span class="p">,</span> <span class="n">previous_high</span><span class="o">=</span><span class="n">previous_high</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">who</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">climb</span> <span class="o">=</span> <span class="n">score0</span> <span class="o">-</span> <span class="n">previous_score</span>
+            <span class="n">previous_score</span> <span class="o">=</span> <span class="n">score0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">climb</span> <span class="o">=</span> <span class="n">score1</span> <span class="o">-</span> <span class="n">previous_score</span>
+            <span class="n">previous_score</span> <span class="o">=</span> <span class="n">score1</span>
+        <span class="k">if</span> <span class="n">climb</span> <span class="o">&gt;</span> <span class="n">previous_high</span><span class="p">:</span>
+            <span class="n">previous_high</span> <span class="o">=</span> <span class="n">climb</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">climb</span><span class="p">,</span> <span class="s1">&#39;point(s)! That</span><span class="se">\&#39;</span><span class="s1">s the biggest gain yet for Player&#39;</span><span class="p">,</span> <span class="n">who</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">announce_highest</span><span class="p">(</span><span class="n">who</span><span class="p">,</span> <span class="n">previous_high</span><span class="p">,</span> <span class="n">previous_score</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">say</span>
+ 
+ 
+<span class="c1">#######################</span>
+<span class="c1"># Phase 3: Strategies #</span>
+<span class="c1">#######################</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">always_roll</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return a strategy that always rolls N dice.
+</span><span class="s2"> 
+</span><span class="s2">    A strategy is a function that takes two total scores as arguments (the
+</span><span class="s2">    current player&#39;s score, and the opponent&#39;s score), and returns a number of
+</span><span class="s2">    dice that the current player will roll this turn.
+</span><span class="s2"> 
+</span><span class="s2">    &gt;&gt;&gt; strategy = always_roll(5)
+</span><span class="s2">    &gt;&gt;&gt; strategy(0, 0)
+</span><span class="s2">    5
+</span><span class="s2">    &gt;&gt;&gt; strategy(99, 99)
+</span><span class="s2">    5
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">strategy</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">strategy</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">make_averaged</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return a function that returns the average value of FN when called.
+</span><span class="s2"> 
+</span><span class="s2">    To implement this function, you will have to use *args syntax, a new Python
+</span><span class="s2">    feature introduced in this project.  See the project description.
+</span><span class="s2"> 
+</span><span class="s2">    &gt;&gt;&gt; dice = make_test_dice(4, 2, 5, 1)
+</span><span class="s2">    &gt;&gt;&gt; averaged_dice = make_averaged(dice, 1000)
+</span><span class="s2">    &gt;&gt;&gt; averaged_dice()
+</span><span class="s2">    3.0
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># BEGIN PROBLEM 8</span>
+    <span class="k">def</span> <span class="nf">average_value</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">num_samples</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">average</span> <span class="o">=</span> <span class="n">result</span> <span class="o">/</span> <span class="n">num_samples</span>
+        <span class="k">return</span> <span class="n">average</span>
+    <span class="k">return</span> <span class="n">average_value</span>
+    <span class="c1"># END PROBLEM 8</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">max_scoring_num_rolls</span><span class="p">(</span><span class="n">dice</span><span class="o">=</span><span class="n">six_sided</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return the number of dice (1 to 10) that gives the highest average turn
+</span><span class="s2">    score by calling roll_dice with the provided DICE over NUM_SAMPLES times.
+</span><span class="s2">    Assume that the dice always return positive outcomes.
+</span><span class="s2"> 
+</span><span class="s2">    &gt;&gt;&gt; dice = make_test_dice(1, 6)
+</span><span class="s2">    &gt;&gt;&gt; max_scoring_num_rolls(dice)
+</span><span class="s2">    1
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># BEGIN PROBLEM 9</span>
+    <span class="n">roll</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">max_average</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_roll</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">while</span> <span class="n">roll</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">turn_average</span> <span class="o">=</span> <span class="n">make_averaged</span><span class="p">(</span><span class="n">roll_dice</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">)(</span><span class="n">roll</span><span class="p">,</span> <span class="n">dice</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">turn_average</span> <span class="o">&gt;=</span> <span class="n">max_average</span><span class="p">:</span>
+            <span class="n">max_average</span> <span class="o">=</span> <span class="n">turn_average</span>
+            <span class="n">max_roll</span> <span class="o">=</span> <span class="n">roll</span>
+        <span class="n">roll</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">max_roll</span>
+    <span class="c1"># END PROBLEM 9</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">winner</span><span class="p">(</span><span class="n">strategy0</span><span class="p">,</span> <span class="n">strategy1</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return 0 if strategy0 wins against strategy1, and 1 otherwise.&#34;&#34;&#34;</span>
+    <span class="n">score0</span><span class="p">,</span> <span class="n">score1</span> <span class="o">=</span> <span class="n">play</span><span class="p">(</span><span class="n">strategy0</span><span class="p">,</span> <span class="n">strategy1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">score0</span> <span class="o">&gt;</span> <span class="n">score1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">average_win_rate</span><span class="p">(</span><span class="n">strategy</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="n">always_roll</span><span class="p">(</span><span class="mi">4</span><span class="p">)):</span>
+    <span class="s2">&#34;&#34;&#34;Return the average win rate of STRATEGY against BASELINE. Averages the
+</span><span class="s2">    winrate when starting the game as player 0 and as player 1.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">win_rate_as_player_0</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">make_averaged</span><span class="p">(</span><span class="n">winner</span><span class="p">)(</span><span class="n">strategy</span><span class="p">,</span> <span class="n">baseline</span><span class="p">)</span>
+    <span class="n">win_rate_as_player_1</span> <span class="o">=</span> <span class="n">make_averaged</span><span class="p">(</span><span class="n">winner</span><span class="p">)(</span><span class="n">baseline</span><span class="p">,</span> <span class="n">strategy</span><span class="p">)</span>
+ 
+    <span class="k">return</span> <span class="p">(</span><span class="n">win_rate_as_player_0</span> <span class="o">+</span> <span class="n">win_rate_as_player_1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">run_experiments</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;Run a series of strategy experiments and report results.&#34;&#34;&#34;</span>
+    <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Change to False when done finding max_scoring_num_rolls</span>
+        <span class="n">six_sided_max</span> <span class="o">=</span> <span class="n">max_scoring_num_rolls</span><span class="p">(</span><span class="n">six_sided</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Max scoring num rolls for six-sided dice:&#39;</span><span class="p">,</span> <span class="n">six_sided_max</span><span class="p">)</span>
+ 
+    <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>  <span class="c1"># Change to True to test always_roll(8)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;always_roll(6) win rate:&#39;</span><span class="p">,</span> <span class="n">average_win_rate</span><span class="p">(</span><span class="n">always_roll</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
+ 
+    <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>  <span class="c1"># Change to True to test bacon_strategy</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bacon_strategy win rate:&#39;</span><span class="p">,</span> <span class="n">average_win_rate</span><span class="p">(</span><span class="n">bacon_strategy</span><span class="p">))</span>
+ 
+    <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>  <span class="c1"># Change to True to test swap_strategy</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;swap_strategy win rate:&#39;</span><span class="p">,</span> <span class="n">average_win_rate</span><span class="p">(</span><span class="n">swap_strategy</span><span class="p">))</span>
+ 
+    <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>  <span class="c1"># Change to True to test final_strategy</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;final_strategy win rate:&#39;</span><span class="p">,</span> <span class="n">average_win_rate</span><span class="p">(</span><span class="n">final_strategy</span><span class="p">))</span>
+ 
+    <span class="s2">&#34;*** You may add additional experiments as you wish ***&#34;</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">bacon_strategy</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">num_rolls</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;This strategy rolls 0 dice if that gives at least MARGIN points, and
+</span><span class="s2">    rolls NUM_ROLLS otherwise.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># BEGIN PROBLEM 10</span>
+    <span class="k">if</span> <span class="n">free_bacon</span><span class="p">(</span><span class="n">opponent_score</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">margin</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">num_rolls</span> 
+    <span class="c1"># END PROBLEM 10</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">swap_strategy</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">num_rolls</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;This strategy rolls 0 dice when it triggers a beneficial swap. It also
+</span><span class="s2">    rolls 0 dice if it gives at least MARGIN points and does not trigger a
+</span><span class="s2">    non-beneficial swap. Otherwise, it rolls NUM_ROLLS.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># BEGIN PROBLEM 11</span>
+    <span class="n">bacon_score</span> <span class="o">=</span> <span class="n">free_bacon</span><span class="p">(</span><span class="n">opponent_score</span><span class="p">)</span>
+    <span class="n">add_score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="n">bacon_score</span>
+    <span class="k">if</span> <span class="n">is_swap</span><span class="p">(</span><span class="n">add_score</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">)</span> <span class="ow">and</span> <span class="n">add_score</span> <span class="o">&lt;</span> <span class="n">opponent_score</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">bacon_score</span> <span class="o">&gt;=</span> <span class="n">margin</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_swap</span><span class="p">(</span><span class="n">add_score</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">)</span> <span class="ow">and</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">opponent_score</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">num_rolls</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">num_rolls</span>
+    <span class="c1"># END PROBLEM 11</span>
+ 
+ 
+<span class="k">def</span> <span class="nf">final_strategy</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Write a brief description of your final strategy.
+</span><span class="s2"> 
+</span><span class="s2">    *** YOUR DESCRIPTION HERE ***
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">dice</span> <span class="o">=</span> <span class="n">swap_strategy</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">opponent_score</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">num_rolls</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">dice</span>
+ 
+ 
+<span class="c1">##########################</span>
+<span class="c1"># Command Line Interface #</span>
+<span class="c1">##########################</span>
+ 
+<span class="c1"># NOTE: Functions in this section do not need to be changed. They use features</span>
+<span class="c1"># of Python not yet covered in the course.</span>
+ 
+ 
+<span class="nd">@main</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Read in the command-line argument and calls corresponding functions.
+</span><span class="s2"> 
+</span><span class="s2">    This function uses Python syntax/techniques not yet covered in this course.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="kn">import</span> <span class="nn">argparse</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&#34;Play Hog&#34;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--run_experiments&#39;</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Runs strategy experiments&#39;</span><span class="p">)</span>
+ 
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+ 
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">run_experiments</span><span class="p">:</span>
+        <span class="n">run_experiments</span><span class="p">()</span>
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://quilt08.github.io/tags/cs61a/">CS61A</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://quilt08.github.io/css/comments.css" />
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'KCfRihGV4yBHMc3OnJwObJmk-MdYXbMMI',
+        appKey: 'EPkr1jutVt463bhCGN180xWo',
+        placeholder: ' ',
+        visitor: 'true',
+    })
+</script>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>明天再想</span>
+    </div>
+</footer>
+    <script src="https://quilt08.github.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://quilt08.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://quilt08.github.io/js/fancybox.min.js"></script>
+<script src="https://quilt08.github.io/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

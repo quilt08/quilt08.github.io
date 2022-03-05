@@ -2,36 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/page/</loc>
-    <lastmod>2021-11-30T23:58:54+08:00</lastmod>
+    <loc>https://quilt08.github.io/tags/cs61a/</loc>
+    <lastmod>2022-03-05T21:13:24+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/</loc>
-    <lastmod>2021-11-30T23:58:54+08:00</lastmod>
+    <loc>https://quilt08.github.io/posts/cs61a/</loc>
+    <lastmod>2022-03-05T21:13:24+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/%E5%85%B3%E4%BA%8E%E6%88%91/</loc>
-    <lastmod>2021-11-30T23:58:54+08:00</lastmod>
+    <loc>https://quilt08.github.io/</loc>
+    <lastmod>2022-03-05T21:13:24+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/first-post/</loc>
+    <loc>https://quilt08.github.io/posts/</loc>
+    <lastmod>2022-03-05T21:13:24+08:00</lastmod>
+  </url><url>
+    <loc>https://quilt08.github.io/tags/</loc>
+    <lastmod>2022-03-05T21:13:24+08:00</lastmod>
+  </url><url>
+    <loc>https://quilt08.github.io/about/</loc>
+    <lastmod>2022-03-05T20:24:28+08:00</lastmod>
+  </url><url>
+    <loc>https://quilt08.github.io/posts/the-game-of-hog/</loc>
+    <lastmod>2022-01-15T20:53:14+08:00</lastmod>
+  </url><url>
+    <loc>https://quilt08.github.io/categories/</loc>
     <lastmod>2021-11-29T23:52:38+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://quilt08.github.io/tags/hugo/</loc>
     <lastmod>2021-11-29T23:52:38+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/hugo/</loc>
+    <loc>https://quilt08.github.io/posts/first-post/</loc>
     <lastmod>2021-11-29T23:52:38+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/</loc>
+    <loc>https://quilt08.github.io/categories/%E9%BB%91%E9%AD%94%E6%B3%95%E9%98%B2%E5%BE%A1%E6%9C%AF/</loc>
     <lastmod>2021-11-29T23:52:38+08:00</lastmod>
-  </url><url>
-    <loc>https://example.com/tags/</loc>
-    <lastmod>2021-11-29T23:52:38+08:00</lastmod>
-  </url><url>
-    <loc>https://example.com/categories/%E9%BB%91%E9%AD%94%E6%B3%95%E9%98%B2%E5%BE%A1%E6%9C%AF/</loc>
-    <lastmod>2021-11-29T23:52:38+08:00</lastmod>
-  </url><url>
-    <loc>https://example.com/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.com/search/</loc>
   </url>
 </urlset>
