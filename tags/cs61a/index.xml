@@ -6,7 +6,16 @@
     <description>Recent content in CS61A on Nian.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 06 Mar 2022 22:18:14 +0800</lastBuildDate><atom:link href="https://quilt08.github.io/tags/cs61a/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 19:25:16 +0800</lastBuildDate><atom:link href="https://quilt08.github.io/tags/cs61a/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Disc03</title>
+      <link>https://quilt08.github.io/posts/disc03/</link>
+      <pubDate>Sat, 12 Mar 2022 19:25:16 +0800</pubDate>
+      
+      <guid>https://quilt08.github.io/posts/disc03/</guid>
+      <description>题目链接 主要是recursion，前面做的都比较顺，最后一题卡了好久，看了答案之后发现并没有完全用recursion 还以为不能用iteration，摔桌子 def multiply(m, n): &amp;#34;&amp;#34;&amp;#34; &amp;gt;&amp;gt;&amp;gt; multiply(5, 3) 15 &amp;#34;&amp;#34;&amp;#34; if n == 1: return m else: return m + multiply(m, n-1) def is_prime(n):</description>
+    </item>
+    
     <item>
       <title>Lab04</title>
       <link>https://quilt08.github.io/posts/lab04/</link>
