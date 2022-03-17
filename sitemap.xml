@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://quilt08.github.io/tags/notion/</loc>
+    <lastmod>2022-03-17T17:15:14+08:00</lastmod>
+  </url><url>
+    <loc>https://quilt08.github.io/posts/</loc>
+    <lastmod>2022-03-17T17:15:14+08:00</lastmod>
+  </url><url>
+    <loc>https://quilt08.github.io/tags/</loc>
+    <lastmod>2022-03-17T17:15:14+08:00</lastmod>
+  </url><url>
+    <loc>https://quilt08.github.io/</loc>
+    <lastmod>2022-03-17T17:15:14+08:00</lastmod>
+  </url><url>
+    <loc>https://quilt08.github.io/posts/notion/</loc>
+    <lastmod>2022-03-17T17:15:14+08:00</lastmod>
+  </url><url>
     <loc>https://quilt08.github.io/tags/cs61a/</loc>
     <lastmod>2022-03-12T19:25:16+08:00</lastmod>
   </url><url>
     <loc>https://quilt08.github.io/posts/disc03/</loc>
-    <lastmod>2022-03-12T19:25:16+08:00</lastmod>
-  </url><url>
-    <loc>https://quilt08.github.io/posts/</loc>
-    <lastmod>2022-03-12T19:25:16+08:00</lastmod>
-  </url><url>
-    <loc>https://quilt08.github.io/tags/</loc>
-    <lastmod>2022-03-12T19:25:16+08:00</lastmod>
-  </url><url>
-    <loc>https://quilt08.github.io/</loc>
     <lastmod>2022-03-12T19:25:16+08:00</lastmod>
   </url><url>
     <loc>https://quilt08.github.io/posts/lab04/</loc>
